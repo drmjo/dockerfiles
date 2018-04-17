@@ -1,0 +1,22 @@
+version: '3'
+services:
+  jekyll:
+    image: drmjo/jekyll:latest
+    build:
+      context: .
+      dockerfile: dockerfiles/jekyll.Dockerfile
+  aws:
+    image: drmjo/aws:latest
+    build:
+      context: .
+      dockerfile: dockerfiles/aws.Dockerfile
+  node:
+    image: drmjo/node:6.10
+    build:
+      context: .
+      dockerfile: dockerfiles/node.Dockerfile
+  terraform:
+    image: drmjo/terraform:0.11.6
+    build:
+      context: .
+      dockerfile: dockerfiles/terraform.Dockerfile
