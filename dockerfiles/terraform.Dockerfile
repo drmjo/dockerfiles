@@ -17,4 +17,9 @@ RUN curl https://releases.hashicorp.com/terraform/${TERRAFORM_VERSION}/terraform
     unzip terraform_${TERRAFORM_VERSION}_linux_amd64.zip -d /bin && \
     rm -f terraform_${TERRAFORM_VERSION}_linux_amd64.zip
 
+ARG USER=terraform
+RUN adduser --disabled-password --gecos "" $USER
+
+USER $USER
+
 ENTRYPOINT ["/bin/bash"]
