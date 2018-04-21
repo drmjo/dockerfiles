@@ -8,3 +8,8 @@ RUN apt-get update -y \
 
 ARG USER=node
 USER $USER
+
+WORKDIR /home/$USER
+
+# enable color prompt
+RUN sed -i 's/#force_color_prompt/force_color_prompt/' .bashrc
