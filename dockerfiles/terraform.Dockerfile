@@ -8,8 +8,8 @@ RUN apt-get update -y && \
       git \
     && apt-get clean
 
-ENV TERRAFORM_VERSION=0.11.6
-ENV TERRAFORM_SHA256SUM=aed5c7388a3c54dc816986903d4dea32e182a002d746295e1016f6db741f472d
+ENV TERRAFORM_VERSION=0.11.7
+ENV TERRAFORM_SHA256SUM=6b8ce67647a59b2a3f70199c304abca0ddec0e49fd060944c26f666298e23418
 
 RUN curl https://releases.hashicorp.com/terraform/${TERRAFORM_VERSION}/terraform_${TERRAFORM_VERSION}_linux_amd64.zip > terraform_${TERRAFORM_VERSION}_linux_amd64.zip && \
     echo "${TERRAFORM_SHA256SUM}  terraform_${TERRAFORM_VERSION}_linux_amd64.zip" > terraform_${TERRAFORM_VERSION}_SHA256SUMS && \
