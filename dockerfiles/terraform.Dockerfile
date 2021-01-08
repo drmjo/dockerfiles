@@ -1,6 +1,6 @@
 FROM buildpack-deps:buster
 
-LABEL maintainer="Majan Paul <paul@urbancoyote.com>"
+LABEL maintainer="Majan Paul <majan@mjo.io>"
 
 RUN apt-get update -y && \
     apt-get install -y \
@@ -8,8 +8,8 @@ RUN apt-get update -y && \
       git \
     && apt-get clean
 
-ENV TERRAFORM_VERSION=0.12.29
-ENV TERRAFORM_SHA256SUM=872245d9c6302b24dc0d98a1e010aef1e4ef60865a2d1f60102c8ad03e9d5a1d
+ENV TERRAFORM_VERSION=0.13.6
+ENV TERRAFORM_SHA256SUM=55f2db00b05675026be9c898bdd3e8230ff0c5c78dd12d743ca38032092abfc9
 
 RUN curl https://releases.hashicorp.com/terraform/${TERRAFORM_VERSION}/terraform_${TERRAFORM_VERSION}_linux_amd64.zip > terraform_${TERRAFORM_VERSION}_linux_amd64.zip && \
     echo "${TERRAFORM_SHA256SUM}  terraform_${TERRAFORM_VERSION}_linux_amd64.zip" > terraform_${TERRAFORM_VERSION}_SHA256SUMS && \
