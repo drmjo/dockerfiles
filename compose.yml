@@ -16,7 +16,7 @@ services:
       context: .
       dockerfile: dockerfiles/node.Dockerfile
   terraform:
-    image: drmjo/terraform:0.13.6
+    image: drmjo/terraform:0.14.6
     build:
       context: .
       dockerfile: dockerfiles/terraform.Dockerfile
